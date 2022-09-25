@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ul id="my-list"></ul>
+
+<form id="add-name">
+    <input type="text" id="name">
+    <input type="submit" id="add-name-submit" value="Add name">
+    <button type ="submit" id ="remove-first">Remove first</button>
+    <button type ="submit" id ="remove-last">Remove last</button>
+</form>
+
+<script>
+    const names = ["Mark", "stone", "Bo", "Hansen", "Jeanette"]
+    printNames(names)
+
+    document.getElementById("add-name-submit").onclick = function (event) {
+        const form = document.getElementById("add-name")
+        names.push(form.elements[0].value)
+        printNames(names)
+        event.preventDefault();
+    }
+
+    document.getElementById("remove-first").onclick = function (event) {
+        event.preventDefault();
+        names.shift();
+        printNames(names)
+    }
+
+    document.getElementById("remove-last").onclick = function (event) {
+        event.preventDefault();
+        names.pop();
+        printNames(names)
+    }
+
+   function printNames(names){
+       var namesAsList = names
+           .map(name => `<li>${name}</li>`)
+           .join("")
+       document.getElementById("my-list").innerHTML = namesAsList
+    }
+
+
+</script>
+</body>
+</html>

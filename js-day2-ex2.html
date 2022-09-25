@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="outer">
+    <div id="div1" class="my-div">
+
+    </div>
+
+    <div id="div2" class="my-div">
+    </div>
+
+    <div id="div3" class="my-div">
+    </div>
+    <div id="div4" class="my-div">
+    </div>
+    <div id="div5" class="my-div">
+    </div>
+    <div id="div6" class="my-div">
+    </div>
+    <div id="div7" class="my-div">
+    </div>
+    <div id="div8" class="my-div">
+    </div>
+    <div id="div9" class="my-div">
+    </div>
+    <div id="div10" class="my-div">
+    </div>
+
+    <p id ="printID">
+
+    </p>
+</div>
+
+
+<style>
+    .my-div {
+        width: 25px;
+        height: 25px;
+        background-color: red;
+        margin: 1px;
+    }
+</style>
+
+
+<script>
+    const div1 = document.getElementById("div1").addEventListener("click", displayId)
+
+    function displayId() {
+        console.log("div1")
+    }
+
+
+    const printID= document.getElementById("printID")
+    const outerDiv = document.getElementById("outer")
+    outerDiv.onclick = function (event) {
+        var target = event.target.id
+        console.log("hi form div with id: " + target)
+        printID.innerHTML = target
+    }
+
+</script>
+</body>
+</html>
